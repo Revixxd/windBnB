@@ -9,5 +9,5 @@ export const ContainerStyled = styled.div`
     flex-direction: column;
     /* wait for footer */
     /* justify-content: space-evenly; */ 
-    gap:5vh;
+    gap: 3vh;
 `

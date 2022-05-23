@@ -8,12 +8,12 @@ function GalleryElement(){
             <div className="infoDiv">
                 <div className="infoDivUp">
                     <div className="infoDivUp--hostApartmentDiv">
-                        <p>Super Host</p>
+                        <h5>Super Host</h5>
                         <p>Private Room</p>
                     </div>
                     <div className="infoDivUp--raitingDiv">
                         {/* star icon  */}
-                        <p>4.40</p>
+                        <h6>4.40</h6>
                     </div>
                 </div>
                 <div className="infoDivDown">
