@@ -1,9 +1,18 @@
 import { HeaderStyled } from "./headerStyling"
 
+import logo from "../../resources/img/logo.png"
+
 function Header(){
     return(
         <HeaderStyled>
-            <h1>Test_2</h1>
+            <div className="logoDiv">
+                <img src={logo} alt="logo">
+                </img>
+            </div>
+            <div className="navigation">
+                <h3>Location</h3>
+                <h3>Add Guests</h3>
+            </div>
         </HeaderStyled>
     )
 }
