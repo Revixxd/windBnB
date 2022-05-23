@@ -10,8 +10,9 @@ function Header(){
                 </img>
             </div>
             <div className="navigation">
-                <h3>Location</h3>
-                <h3>Add Guests</h3>
+                <h4>Current Location</h4>
+                <h4 className="navigation--addGuests">Add Guests</h4>
+                <span class="material-symbols-outlined">search</span>
             </div>
         </HeaderStyled>
     )

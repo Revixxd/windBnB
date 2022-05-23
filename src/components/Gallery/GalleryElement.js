@@ -14,7 +14,7 @@ function GalleryElement(props){
                         <p>{props.type}</p>
                     </div>
                     <div className="infoDivUp--raitingDiv">
-                        {/* star icon  */}
+                    <span class="material-symbols-outlined">star</span>
                         <h6>{props.rating}</h6>
                     </div>
                 </div>

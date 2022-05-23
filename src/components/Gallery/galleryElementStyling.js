@@ -29,4 +29,15 @@ export const GalleryElementStyled = styled.div`
         flex-direction: row;
         gap:30px
     }
+    .infoDivUp--raitingDiv{
+        display: flex;
+        align-items: center;
+
+    }
+
+    .material-symbols-outlined{
+        font-size:20px;
+        color: #EB5757;
+    }
+
 `
