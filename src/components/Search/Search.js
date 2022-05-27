@@ -37,7 +37,7 @@ function Search(props){
         setSelectedOption(parameter)
     }
 
-
+    const falseState = false;
 
     return(
 
@@ -56,19 +56,21 @@ function Search(props){
                 <div className={ `element element--button ${(isMobile ? '' : 'element--boxShadow')}`}>
                     <button onClick = {props.handleClick} ><span  class="material-symbols-outlined">search</span>Search</button>
                 </div>
+                
+                <div  className= {`chooseDiv ${selectedOption === "guests" ? `element--columnStart2` : ''}`}>
 
-                <div  
-                className="chooseDiv">
                     {selectedOption === "location" && 
                         <div className= "">
                             {elementsLocation}
                         </div>
                     }
+                    
                     {selectedOption === "guests" && 
-                        <div  className= "">
+                        <div >
                             <input type="number"/>
                         </div>
                     }
+
                 </div>
                 
             </div>

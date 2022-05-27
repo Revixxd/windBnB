@@ -26,12 +26,17 @@ export const SearchStyled = styled.div`
     .element--borderSelected{
         border: 1px black solid;
     }
+
     .element--boxShadow{
         -webkit-box-shadow: 0px 0px 5px -1px rgba(177, 177, 181, 1);
         -moz-box-shadow: 0px 0px 5px -1px rgba(177, 177, 181, 1);
         box-shadow: 0px 0px 5px -1px rgba(177, 177, 181, 1);
     }
     
+    .element--columnStart2{
+        grid-column-start: 2;
+    }
+
     .element--boxShadow--red{
         background-color: red;
     }
