@@ -8,8 +8,9 @@ export const GalleryElementStyled = styled.div`
 
     .imgDiv img{
         border-radius: 24px;
-        max-width:100%;
-        max-height:100%;
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
     }
     .infoDiv{
         padding: 5px;

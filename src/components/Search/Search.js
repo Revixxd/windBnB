@@ -62,7 +62,7 @@ function Search(){
                     <button><span onClick = {setSelectedOption.bind(selectedOption)} class="material-symbols-outlined">search</span>Search</button>
                 </div>
 
-                <div style= { } 
+                <div  
                 className="chooseDiv">
                     {selectedOption == "location" && 
                         <div className= "">

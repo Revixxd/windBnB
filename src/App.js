@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-        <Search/>
+        {/* <Search/> */}
         <ContainerStyled>
           <Header />
           <Gallery />
