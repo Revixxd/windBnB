@@ -2,7 +2,7 @@ import { HeaderStyled } from "./headerStyling"
 
 import logo from "../../resources/img/logo.png"
 
-function Header(){
+function Header(props){
     return(
         <HeaderStyled>
             <div className="logoDiv">
@@ -11,8 +11,8 @@ function Header(){
             </div>
             <div className="navigation">
                 <h4>Current Location</h4>
-                <h4 className="navigation--addGuests">Add Guests</h4>
-                <span class="material-symbols-outlined">search</span>
+                <h4 onClick = {props.handleClick} className="navigation--addGuests">Add Guests</h4>
+                <span onClick = {props.handleClick} className="material-symbols-outlined">search</span>
             </div>
         </HeaderStyled>
     )

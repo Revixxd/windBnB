@@ -3,7 +3,7 @@ import SearchElementLocation from "./SearchElementLocation";
 import {SearchStyled} from "./searchStyling"
 import useWindowDimensions from "../windowSize"
 
-function Search(){
+function Search(props){
     const { width,  } = useWindowDimensions();
     
     const [isMobile, setIsMobile] = React.useState()
@@ -59,7 +59,7 @@ function Search(){
                     <p>Add Guests</p>
                 </div>
                 <div className={ "element element--button " + `${(isMobile ? '' : 'element--boxShadow')}`}>
-                    <button><span onClick = {setSelectedOption.bind(selectedOption)} class="material-symbols-outlined">search</span>Search</button>
+                    <button onClick = {props.handleClick} ><span  class="material-symbols-outlined">search</span>Search</button>
                 </div>
 
                 <div  
