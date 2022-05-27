@@ -31,17 +31,12 @@ function Search(props){
         
     })
 
-    const [selectedOption, setSelectedOption] = React.useState()
+    const [selectedOption, setSelectedOption] = React.useState('')
 
-    function setSelected(item){
-        setSelectedOption(item)
+    function setSelected(parameter){
+        setSelectedOption(parameter)
     }
 
-
-    const columnStart2 = {
-        gridColumnStart: "2",
-        backgroundColor: "red"
-    }
 
 
     return(
@@ -50,26 +45,26 @@ function Search(props){
         <SearchStyled>
             
             <div className="container">
-                <div locaton onClick={setSelected.bind(selectedOption, "location")} className={"element element--boxShadow " + `${selectedOption == "location" ? 'element--borderSelected' : ''}`}>
+                <div locaton onClick={() => setSelected("location")} className={`element element--boxShadow  ${selectedOption === "location" ? 'element--borderSelected' : ''}`}>
                     <h3>Location</h3>
                     <p>Helsiniki</p>
                 </div>
-                <div onClick={setSelected.bind(selectedOption, "guests")} className={"element element--boxShadow " + `${selectedOption == "guests" ? 'element--borderSelected' : ''}`}>
+                <div onClick={() => setSelected("guests")} className={`element element--boxShadow ${selectedOption === "guests" ? 'element--borderSelected' : ''}`}>
                     <h3>Guests</h3>
                     <p>Add Guests</p>
                 </div>
-                <div className={ "element element--button " + `${(isMobile ? '' : 'element--boxShadow')}`}>
+                <div className={ `element element--button ${(isMobile ? '' : 'element--boxShadow')}`}>
                     <button onClick = {props.handleClick} ><span  class="material-symbols-outlined">search</span>Search</button>
                 </div>
 
                 <div  
                 className="chooseDiv">
-                    {selectedOption == "location" && 
+                    {selectedOption === "location" && 
                         <div className= "">
                             {elementsLocation}
                         </div>
                     }
-                    {selectedOption == "guests" && 
+                    {selectedOption === "guests" && 
                         <div  className= "">
                             <input type="number"/>
                         </div>
