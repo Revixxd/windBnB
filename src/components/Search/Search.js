@@ -3,7 +3,7 @@ import SearchElementLocation from "./SearchElementLocation";
 import {SearchStyled} from "./searchStyling"
 import useWindowDimensions from "../windowSize"
 
-function Search(){
+function Search(props){
     const { width,  } = useWindowDimensions();
     
     const [isMobile, setIsMobile] = React.useState()
@@ -31,18 +31,13 @@ function Search(){
         
     })
 
-    const [selectedOption, setSelectedOption] = React.useState()
+    const [selectedOption, setSelectedOption] = React.useState('')
 
-    function setSelected(item){
-        setSelectedOption(item)
+    function setSelected(parameter){
+        setSelectedOption(parameter)
     }
 
-
-    const columnStart2 = {
-        gridColumnStart: "2",
-        backgroundColor: "red"
-    }
-
+    const falseState = false;
 
     return(
 
@@ -50,30 +45,32 @@ function Search(){
         <SearchStyled>
             
             <div className="container">
-                <div locaton onClick={setSelected.bind(selectedOption, "location")} className={"element element--boxShadow " + `${selectedOption == "location" ? 'element--borderSelected' : ''}`}>
+                <div locaton onClick={() => setSelected("location")} className={`element element--boxShadow  ${selectedOption === "location" ? 'element--borderSelected' : ''}`}>
                     <h3>Location</h3>
                     <p>Helsiniki</p>
                 </div>
-                <div onClick={setSelected.bind(selectedOption, "guests")} className={"element element--boxShadow " + `${selectedOption == "guests" ? 'element--borderSelected' : ''}`}>
+                <div onClick={() => setSelected("guests")} className={`element element--boxShadow ${selectedOption === "guests" ? 'element--borderSelected' : ''}`}>
                     <h3>Guests</h3>
                     <p>Add Guests</p>
                 </div>
-                <div className={ "element element--button " + `${(isMobile ? '' : 'element--boxShadow')}`}>
-                    <button><span onClick = {setSelectedOption.bind(selectedOption)} class="material-symbols-outlined">search</span>Search</button>
+                <div className={ `element element--button ${(isMobile ? '' : 'element--boxShadow')}`}>
+                    <button onClick = {props.handleClick} ><span  class="material-symbols-outlined">search</span>Search</button>
                 </div>
+                
+                <div  className= {`chooseDiv ${selectedOption === "guests" ? `element--columnStart2` : ''}`}>
 
-                <div  
-                className="chooseDiv">
-                    {selectedOption == "location" && 
+                    {selectedOption === "location" && 
                         <div className= "">
                             {elementsLocation}
                         </div>
                     }
-                    {selectedOption == "guests" && 
-                        <div  className= "">
+                    
+                    {selectedOption === "guests" && 
+                        <div >
                             <input type="number"/>
                         </div>
                     }
+
                 </div>
                 
             </div>

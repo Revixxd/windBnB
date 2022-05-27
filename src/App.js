@@ -1,3 +1,6 @@
+import React from "react"
+
+
 import {GlobalStyles} from "./components/globalStyles"
 import { ContainerStyled } from "./components/containerStyling"
 
@@ -9,12 +12,19 @@ import Footer from "./components/Footer/Footer"
 // import Footer from "./components/Header/Footer"
 
 function App() {
+
+  const [searchTabVisible, setSearchTabVisible] = React.useState(false)
+
+  function turnSearch(){
+    setSearchTabVisible(prevState => !prevState)
+  }
+
   return (
     <>
       <GlobalStyles />
-        {/* <Search/> */}
+        {searchTabVisible &&<Search handleClick={turnSearch} />}
         <ContainerStyled>
-          <Header />
+          <Header handleClick={turnSearch} />
           <Gallery />
           <Footer />
         </ContainerStyled>
