@@ -17,11 +17,14 @@ export const SearchStyled = styled.div`
         grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
     }
     .element{
+        cursor: pointer;
         padding: 10px 30px;
-        border-radius: 12px;
+        border-radius: 16px;
 
-        
-
+    }
+    
+    .element--borderSelected{
+        border: 1px black solid;
     }
     .element--boxShadow{
         -webkit-box-shadow: 0px 0px 5px -1px rgba(177, 177, 181, 1);
@@ -38,12 +41,14 @@ export const SearchStyled = styled.div`
         align-items:center;
         justify-content: center;
     }
-    .element--list{
+    .chooseDiv{
         padding: 5%;
-        grid-row-start: 2;
+        grid-row-start: 3;
+        
     }
 
     .element--button button{
+        cursor: pointer;
         display: flex;
         align-items:center;
         gap:5px;
