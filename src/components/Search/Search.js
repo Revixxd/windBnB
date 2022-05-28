@@ -37,8 +37,6 @@ function Search(props){
         setSelectedOption(parameter)
     }
 
-    const falseState = false;
-
     return(
 
 
