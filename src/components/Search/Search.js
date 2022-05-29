@@ -32,11 +32,6 @@ function Search(props){
         setSelectedOption(parameter)
     }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 05e3769 (minnor unused const delete)
     return(
 
 
