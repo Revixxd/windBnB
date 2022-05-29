@@ -21,7 +21,7 @@ function Search(props){
     const elementsLocation = props.allCities.map(element =>{
         return(
 
-            <SearchElementLocation content={element}/>
+            <SearchElementLocation handleClick = {props.setCity} content={element}/>
         )
         
     })
