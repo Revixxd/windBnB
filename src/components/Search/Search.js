@@ -17,13 +17,8 @@ function Search(props){
         }
     }, [width])
 
-    //import data of arraysoflocation from data (city, country)
-    const arrayOfLocation = [
-        'berlin',
-        'london'
-    ]
 
-    const elementsLocation = arrayOfLocation.map(element =>{
+    const elementsLocation = props.allCities.map(element =>{
         return(
 
             <SearchElementLocation content={element}/>

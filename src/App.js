@@ -9,7 +9,7 @@ import Search from "./components/Search/Search"
 import Gallery from "./components/Gallery/Gallery"
 import Footer from "./components/Footer/Footer"
 
-// import Footer from "./components/Header/Footer"
+import data from "./data/stays.json"
 
 function App() {
 
@@ -19,13 +19,21 @@ function App() {
     setSearchTabVisible(prevState => !prevState)
   }
 
+  const allCities = [...new Set(data.map(item => item.city))];
+
+
+  const [currentSelectedCity, setCurrentSelectedCity] = React.useState("Helsinki") 
+  
+  const filter = data.filter(element  => element.city === currentSelectedCity )
+
+
   return (
     <>
       <GlobalStyles />
-        {searchTabVisible &&<Search handleClick={turnSearch} />}
+        {searchTabVisible &&<Search allCities = {allCities} handleClick={turnSearch} />}
         <ContainerStyled>
-          <Header handleClick={turnSearch} />
-          <Gallery />
+          <Header  currentSelectedCity = {currentSelectedCity} handleClick={turnSearch} />
+          <Gallery  currentSelectedCity = {currentSelectedCity} data={filter} />
           <Footer />
         </ContainerStyled>
     </>

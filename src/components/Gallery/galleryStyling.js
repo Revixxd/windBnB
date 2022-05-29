@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const GalleryStyled = styled.article`
+export const GalleryStyled = styled.main`
     display: flex;
     flex-direction: column;
     gap:5vh;
