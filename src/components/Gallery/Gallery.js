@@ -2,12 +2,11 @@ import { GalleryStyled } from "./galleryStyling";
 
 import GalleryElement from "./GalleryElement"
 
-// importing data to show in gallery
-import data from "../../data/stays.json"
 
-export default function Gallery(){
 
-    const galleryElements = data.map(element =>{
+export default function Gallery(props){
+
+    const galleryElements = props.data.map(element =>{
         return(
 
             <GalleryElement {...element} />
@@ -17,7 +16,7 @@ export default function Gallery(){
 
     return(
         <GalleryStyled>
-            <h1>Stays in LOCATION</h1>
+            <h1>Stays in {props.currentSelectedCity}</h1>
             <div className="Gallerystyled--container">
                 {galleryElements}
             </div>

@@ -17,16 +17,11 @@ function Search(props){
         }
     }, [width])
 
-    //import data of arraysoflocation from data (city, country)
-    const arrayOfLocation = [
-        'berlin',
-        'london'
-    ]
 
-    const elementsLocation = arrayOfLocation.map(element =>{
+    const elementsLocation = props.allCities.map(element =>{
         return(
 
-            <SearchElementLocation content={element}/>
+            <SearchElementLocation handleClick = {props.setCity} content={element}/>
         )
         
     })
@@ -45,7 +40,7 @@ function Search(props){
             <div className="container">
                 <div locaton onClick={() => setSelected("location")} className={`element element--boxShadow  ${selectedOption === "location" ? 'element--borderSelected' : ''}`}>
                     <h3>Location</h3>
-                    <p>Helsiniki</p>
+                    <p>{props.currentSelectedCity}</p>
                 </div>
                 <div onClick={() => setSelected("guests")} className={`element element--boxShadow ${selectedOption === "guests" ? 'element--borderSelected' : ''}`}>
                     <h3>Guests</h3>
@@ -58,7 +53,7 @@ function Search(props){
                 <div  className= {`chooseDiv ${selectedOption === "guests" ? `element--columnStart2` : ''}`}>
 
                     {selectedOption === "location" && 
-                        <div className= "">
+                        <div className= "elementsLocationDiv">
                             {elementsLocation}
                         </div>
                     }

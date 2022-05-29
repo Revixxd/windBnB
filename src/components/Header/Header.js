@@ -10,7 +10,7 @@ function Header(props){
                 </img>
             </div>
             <div className="navigation">
-                <h4>Current Location</h4>
+                <h4>{props.currentSelectedCity}</h4>
                 <h4 onClick = {props.handleClick} className="navigation--addGuests">Add Guests</h4>
                 <span onClick = {props.handleClick} className="material-symbols-outlined">search</span>
             </div>
