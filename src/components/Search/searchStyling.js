@@ -64,6 +64,12 @@ export const SearchStyled = styled.div`
         border-radius: 8px;
     }
 
+    .elementsLocationDiv{
+        display: flex;
+        flex-direction: column;
+        gap:20px
+    }
+
     @media (max-width: 810px){
         .container{
             grid-template-columns: 1fr ;

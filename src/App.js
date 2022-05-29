@@ -30,6 +30,7 @@ function App() {
 
   function setCity (city){
     setCurrentSelectedCity(city)
+    setSearchTabVisible(false)
   }
   
 

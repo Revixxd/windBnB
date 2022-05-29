@@ -4,6 +4,7 @@ export const GalleryStyled = styled.main`
     display: flex;
     flex-direction: column;
     gap:5vh;
+    min-height: 800px;
     .Gallerystyled--container{
         display: grid;
         gap:2vw;

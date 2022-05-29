@@ -5,4 +5,5 @@ export const SearchElementLocationStyling = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 `

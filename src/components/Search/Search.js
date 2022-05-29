@@ -53,7 +53,7 @@ function Search(props){
                 <div  className= {`chooseDiv ${selectedOption === "guests" ? `element--columnStart2` : ''}`}>
 
                     {selectedOption === "location" && 
-                        <div className= "">
+                        <div className= "elementsLocationDiv">
                             {elementsLocation}
                         </div>
                     }
