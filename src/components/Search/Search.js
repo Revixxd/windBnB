@@ -40,7 +40,7 @@ function Search(props){
             <div className="container">
                 <div locaton onClick={() => setSelected("location")} className={`element element--boxShadow  ${selectedOption === "location" ? 'element--borderSelected' : ''}`}>
                     <h3>Location</h3>
-                    <p>Helsiniki</p>
+                    <p>{props.currentSelectedCity}</p>
                 </div>
                 <div onClick={() => setSelected("guests")} className={`element element--boxShadow ${selectedOption === "guests" ? 'element--borderSelected' : ''}`}>
                     <h3>Guests</h3>
