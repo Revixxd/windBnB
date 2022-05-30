@@ -29,4 +29,13 @@ export const GlobalStyles = createGlobalStyle`
         font-weight:700;
     }
 
+    .overlay{
+        position:absolute;
+        height:100vh;
+        width:100%;
+        background: rgba(79, 79, 79, 0.4);
+        z-index:1;
+        opacity: 1;
+    }
+
 `

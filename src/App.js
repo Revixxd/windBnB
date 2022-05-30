@@ -42,7 +42,9 @@ function App() {
         currentSelectedCity = {currentSelectedCity}
         handleClick={turnSearch} 
         setCity ={setCity}
-        />}
+        />
+        }
+        {searchTabVisible && <div className="overlay"></div>}
         <ContainerStyled>
           <Header  currentSelectedCity = {currentSelectedCity} handleClick={turnSearch} />
           <Gallery  currentSelectedCity = {currentSelectedCity} data={filter} />
