@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const GalleryStyled = styled.main`
     display: flex;
     flex-direction: column;
-    gap:5vh;
+    gap:2vh;
     min-height: 800px;
     .Gallerystyled--container{
         display: grid;

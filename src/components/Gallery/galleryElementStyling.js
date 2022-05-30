@@ -1,6 +1,10 @@
 import styled from "styled-components"
 
 export const GalleryElementStyled = styled.div`
+    p{
+        font-weight: 500;
+        font-size: 14px;
+    }
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -20,20 +24,27 @@ export const GalleryElementStyled = styled.div`
     }
 
     .infoDivUp{
+        height: 15px;
         display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: space-between;
     }
 
     .infoDivUp--hostApartmentDiv{
         display: flex;
         flex-direction: row;
-        gap:30px
+        align-items: center;
+        gap:10px
+    }
+    .infoDivUp--hostApartmentDiv h5{
+        padding: 5px 8px;
+        border-radius: 12px;
+        border: solid 1px #4F4F4F;
     }
     .infoDivUp--raitingDiv{
         display: flex;
         align-items: center;
-
     }
 
     .material-symbols-outlined{
