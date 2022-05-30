@@ -12,7 +12,7 @@ export const SearchElementLocationStyling = styled.div`
     gap: 10px;
     cursor: pointer;
     
-    h5{
+    h4{
         color: #4F4F4F;
     }
 `

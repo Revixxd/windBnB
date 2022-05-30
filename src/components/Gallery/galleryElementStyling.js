@@ -13,7 +13,7 @@ export const GalleryElementStyled = styled.div`
     .imgDiv img{
         border-radius: 24px;
         width: 100%;
-        max-height: 250px;
+        height:250px;
         object-fit: cover;
     }
     .infoDiv{
