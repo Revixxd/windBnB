@@ -8,7 +8,6 @@ Project built on the basis of [devChallenges.io](https://devchallenges.io/challe
 
 Desktop:
 ![App Screenshot](https://i.imgur.com/PLhaQzg.jpg)
-![App Screenshot](https://i.imgur.com/x4Zl6OG.jpg)
 Mobile:
 <p align="center">
   <img width="460" height="100%" src="https://i.imgur.com/0DugQYy.jpg">
