@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const HeaderStyled = styled.header`
+    font-family: 'Mulish', sans-serif;
     margin-top: 2vh;
     width: 100%;
     display: flex;
