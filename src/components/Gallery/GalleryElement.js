@@ -14,7 +14,7 @@ function GalleryElement(props){
                     </div>
                     <div className="infoDivUp--raitingDiv">
                     <span class="material-symbols-outlined">star</span>
-                        <h6>{props.rating}</h6>
+                        <p>{props.rating}</p>
                     </div>
                 </div>
                 <div className="infoDivDown">

@@ -9,7 +9,6 @@ export const GlobalStyles = createGlobalStyle`
 
     body{
         font-family: 'Montserrat', sans-serif;
-        
     }
 
     h1,h2,h3,h4,h5,h6{
@@ -27,6 +26,16 @@ export const GlobalStyles = createGlobalStyle`
     }
     h1{
         font-weight:700;
+    }
+
+
+    .overlay{
+        position:fixed;
+        height:100%;
+        width:100%;
+        background: rgba(79, 79, 79, 0.4);
+        z-index:1;
+        opacity: 1;
     }
 
 `
