@@ -1,6 +1,6 @@
 import { HeaderStyled } from "./headerStyling"
 
-import logo from "../../resources/img/logo.png"
+import logo from "../../resources/img/logo.svg"
 
 function Header(props){
     return(
