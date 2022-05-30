@@ -17,6 +17,7 @@ export const HeaderStyled = styled.header`
         gap:10px;
         display: flex;
         flex-direction: row;
+        align-items: center;
         padding:15px;
         border: solid none;
         border-radius: 16px;
