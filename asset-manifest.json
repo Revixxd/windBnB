@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.js": "/windBnB/static/js/main.69ce9219.js",
+    "main.js": "/windBnB/static/js/main.80ec898a.js",
+    "static/media/logo.svg": "/windBnB/static/media/logo.beef9462a899fe60cb52edfd446e26ef.svg",
     "index.html": "/windBnB/index.html",
-    "main.69ce9219.js.map": "/windBnB/static/js/main.69ce9219.js.map"
+    "main.80ec898a.js.map": "/windBnB/static/js/main.80ec898a.js.map"
   },
   "entrypoints": [
-    "static/js/main.69ce9219.js"
+    "static/js/main.80ec898a.js"
   ]
 }
