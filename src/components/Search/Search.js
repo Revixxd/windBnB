@@ -59,8 +59,35 @@ function Search(props){
                     }
                     
                     {selectedOption === "guests" && 
-                        <div >
-                            <input type="number"/>
+                        <div className="chooseDiv--selectedOption" >
+                            <div className="chooseDiv__selectedOption--element">
+                                <div className="chooseDiv__selectedOption__element--textDiv">
+
+                                    <h4>Adults</h4>
+                                    <p>Ages 13 or above</p>
+                                    
+                                </div>
+
+                                <div className="chooseDiv__selectedOption__element--inputDiv">
+                                    <button><span class="material-symbols-outlined">remove</span></button>
+                                    <p>0</p>
+                                    <button><span class="material-symbols-outlined">add</span></button>
+                                </div>
+                            </div>
+                            <div className="chooseDiv__selectedOption--element">
+                                <div className="chooseDiv__selectedOption__element--textDiv">
+
+                                    <h4>Children</h4>
+                                    <p>Ages 2-12</p>
+                                    
+                                </div>
+
+                                <div className="chooseDiv__selectedOption__element--inputDiv">
+                                    <button><span class="material-symbols-outlined">remove</span></button>
+                                    <p>0</p>
+                                    <button><span class="material-symbols-outlined">add</span></button>
+                                </div>
+                            </div>
                         </div>
                     }
 

@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const SearchStyled = styled.div`
+    p{
+        font-size: 14px;
+    }
 
     background-color: #ffffff;
     width: 100%;
@@ -8,8 +11,12 @@ export const SearchStyled = styled.div`
     top: 0;
     left: 0;
     z-index: 10;
-
+    .material-symbols-outlined{
+        font-size: 15px;
+        font-weight: bold;
+    }
     .container{
+        
         margin: 5%;
         grid-row-gap: 2vh;
         grid-column-gap:5px;
@@ -47,9 +54,9 @@ export const SearchStyled = styled.div`
         justify-content: center;
     }
     .chooseDiv{
-        padding: 5%;
+        padding: 0px 20px;
         grid-row-start: 3;
-        
+        min-height: 180px;
     }
 
     .element--button button{
@@ -68,6 +75,36 @@ export const SearchStyled = styled.div`
         display: flex;
         flex-direction: column;
         gap:20px
+    }
+
+    .chooseDiv--selectedOption{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .chooseDiv__selectedOption--element{
+        
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .chooseDiv__selectedOption--element button{
+        padding: 3px;
+        background-color: transparent;
+        border: 1px solid #828282;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+    }
+
+    .chooseDiv__selectedOption__element--inputDiv{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px
     }
 
     @media (max-width: 810px){

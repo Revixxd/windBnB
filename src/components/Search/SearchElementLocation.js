@@ -3,9 +3,9 @@ import {SearchElementLocationStyling} from "./SearchElementLocationStyling"
 export default function SearchElementLocation(props){
     return(
         <SearchElementLocationStyling >
-            <span class="material-symbols-outlined">pin_drop</span>
+            <span class="material-symbols-outlined">where_to_vote</span>
 
-            <p onClick={() => props.handleClick(props.content)} >{props.content}</p>
+            <h5 onClick={() => props.handleClick(props.content)} >{props.content}</h5>
             
         </SearchElementLocationStyling>
     )
