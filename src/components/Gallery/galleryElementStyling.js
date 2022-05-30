@@ -46,6 +46,9 @@ export const GalleryElementStyled = styled.div`
         display: flex;
         align-items: center;
     }
+    .infoDivUp--raitingDiv p{
+        color: #4F4F4F;
+    }
 
     .material-symbols-outlined{
         font-size:20px;
