@@ -16,12 +16,13 @@ export const SearchStyled = styled.div`
         font-weight: bold;
     }
     .container{
-        
-        margin: 5%;
         grid-row-gap: 2vh;
-        grid-column-gap:5px;
+        grid-column-gap: 5px;
         display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+        grid-template-columns: repeat( auto-fit,minmax(150px,1fr) );
+        max-width: 1300px;
+        margin: 7vh auto;
+        width: 90%;
     }
     .element{
         cursor: pointer;

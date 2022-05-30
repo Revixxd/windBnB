@@ -8,6 +8,7 @@ function Search(props){
     
     const [isMobile, setIsMobile] = React.useState()
 
+
     // make it seprate script or add it to widnowSize.js
     React.useEffect( ()=>{
         if(width <= 810){
@@ -50,7 +51,7 @@ function Search(props){
                     <button onClick = {props.handleClick} ><span  class="material-symbols-outlined">search</span>Search</button>
                 </div>
                 
-                <div  className= {`chooseDiv ${selectedOption === "guests" ? `element--columnStart2` : ''}`}>
+                <div  className= {`chooseDiv ${selectedOption === "guests" ? `${isMobile ? "" : 'element--columnStart2'}` : ''}`}>
 
                     {selectedOption === "location" && 
                         <div className= "elementsLocationDiv">
