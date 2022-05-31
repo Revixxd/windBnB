@@ -1,6 +1,5 @@
 import {GalleryElementStyled} from "./galleryElementStyling"
 function GalleryElement(props){
-
     return(
         <GalleryElementStyled>
             <div className="imgDiv">

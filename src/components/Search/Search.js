@@ -22,7 +22,7 @@ function Search(props){
     const elementsLocation = props.allCities.map(element =>{
         return(
 
-            <SearchElementLocation handleClick = {props.setCity} content={element}/>
+            <SearchElementLocation handleClick = {props.setCity} content={element} currentCountry = {props.currentCountry}/>
         )
         
     })

@@ -22,6 +22,7 @@ function App() {
   //importing all cities name from data array
   const allCities = [...new Set(data.map(item => item.city))];
 
+  const currentCountry = "Finland"  
 
   const [currentSelectedCity, setCurrentSelectedCity] = React.useState("Turku") 
   
@@ -42,12 +43,13 @@ function App() {
         currentSelectedCity = {currentSelectedCity}
         handleClick={turnSearch} 
         setCity ={setCity}
+        currentCountry = {currentCountry}
         />
         }
         {searchTabVisible && <div className="overlay"></div>}
         <ContainerStyled>
           <Header  currentSelectedCity = {currentSelectedCity} handleClick={turnSearch} />
-          <Gallery  currentSelectedCity = {currentSelectedCity} data={filter} />
+          <Gallery  currentCountry = {currentCountry} currentSelectedCity = {currentSelectedCity} data={filter} />
           <Footer />
         </ContainerStyled>
     </>
