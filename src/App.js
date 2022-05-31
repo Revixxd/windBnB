@@ -19,6 +19,8 @@ function App() {
     setSearchTabVisible(prevState => !prevState)
   }
 
+  const [numberOfGuests, setNumberOfGueasts] = React.useState(0)
+
   //importing all cities name from data array
   const allCities = [...new Set(data.map(item => item.city))];
 
@@ -39,17 +41,23 @@ function App() {
     <>
       <GlobalStyles />
         {searchTabVisible && <Search 
+        handleClick={turnSearch} 
         allCities = {allCities} 
         currentSelectedCity = {currentSelectedCity}
-        handleClick={turnSearch} 
         setCity ={setCity}
         currentCountry = {currentCountry}
+        numberOfGuests = {numberOfGuests}
+        setNumberOfGueasts = {setNumberOfGueasts}
         />
         }
         {searchTabVisible && <div className="overlay"></div>}
         <ContainerStyled>
           <Header  currentSelectedCity = {currentSelectedCity} handleClick={turnSearch} />
-          <Gallery  currentCountry = {currentCountry} currentSelectedCity = {currentSelectedCity} data={filter} />
+          <Gallery  currentCountry = {currentCountry} 
+          currentSelectedCity = {currentSelectedCity} 
+          data={filter} 
+          numberOfGuests = {numberOfGuests}
+          />
           <Footer />
         </ContainerStyled>
     </>

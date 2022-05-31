@@ -4,10 +4,29 @@ import {SearchStyled} from "./searchStyling"
 import useWindowDimensions from "../windowSize"
 
 function Search(props){
+
     const { width,  } = useWindowDimensions();
     
     const [isMobile, setIsMobile] = React.useState()
 
+    function increaseNumberOfGuests(){
+        if(props.numberOfGuests != 10 ){
+
+            props.setNumberOfGueasts((prev)=> prev + 1)
+        }else{
+            return
+        }
+    }
+    function decreseNumberOfGuests(){
+        if(props.numberOfGuests > 0 ){
+
+            props.setNumberOfGueasts((prev)=> prev - 1)
+        }else{
+            return
+        }
+    }
+
+    
 
     // make it seprate script or add it to widnowSize.js
     React.useEffect( ()=>{
@@ -70,9 +89,9 @@ function Search(props){
                                 </div>
 
                                 <div className="chooseDiv__selectedOption__element--inputDiv">
-                                    <button><span class="material-symbols-outlined">remove</span></button>
-                                    <p>0</p>
-                                    <button><span class="material-symbols-outlined">add</span></button>
+                                    <button onClick={decreseNumberOfGuests}><span class="material-symbols-outlined">remove</span></button>
+                                    <p>{props.numberOfGuests}</p>
+                                    <button onClick={increaseNumberOfGuests}><span class="material-symbols-outlined">add</span></button>
                                 </div>
                             </div>
                             <div className="chooseDiv__selectedOption--element">
@@ -84,9 +103,9 @@ function Search(props){
                                 </div>
 
                                 <div className="chooseDiv__selectedOption__element--inputDiv">
-                                    <button><span class="material-symbols-outlined">remove</span></button>
-                                    <p>0</p>
-                                    <button><span class="material-symbols-outlined">add</span></button>
+                                    <button onClick={decreseNumberOfGuests}><span class="material-symbols-outlined">remove</span></button>
+                                    <p>{props.numberOfGuests}</p>
+                                    <button onClick={increaseNumberOfGuests}><span class="material-symbols-outlined">add</span></button>
                                 </div>
                             </div>
                         </div>

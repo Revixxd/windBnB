@@ -6,7 +6,10 @@ import GalleryElement from "./GalleryElement"
 
 export default function Gallery(props){
 
-    const galleryElements = props.data.map(element =>{
+
+    const fillteredData = props.data.filter(item => item.maxGuests > props.numberOfGuests)
+
+    const galleryElements = fillteredData.map(element =>{
         return(
 
             <GalleryElement {...element} />
