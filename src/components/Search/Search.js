@@ -10,7 +10,7 @@ function Search(props){
     const [isMobile, setIsMobile] = React.useState()
 
     function increaseNumberOfGuests(){
-        if(props.numberOfGuests != 10 ){
+        if(props.numberOfGuests !== 10 ){
 
             props.setNumberOfGueasts((prev)=> prev + 1)
         }else{
