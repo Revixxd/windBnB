@@ -15,8 +15,9 @@ Mobile:
 
 ## Lessons Learned
 
+During this project I learned how to work with data (extracting specific information and filtering)
 
 ## Roadmap
 
-- Animatons on Load
+- Animatons on first load
 
