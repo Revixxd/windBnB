@@ -21,3 +21,6 @@ During this project I learned how to work with data (extracting specific informa
 
 - Animatons on first load
 
+<!--START_SECTION:update_image-->
+https://picsum.photos/200/300
+<!--END_SECTION:update_image-->
