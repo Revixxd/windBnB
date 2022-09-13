@@ -32,8 +32,6 @@ function Search(props) {
         }
     }, [width])
 
-    //komentarz
-
     const elementsLocation = props.allCities.map((element) => {
         return (
             <SearchElementLocation
