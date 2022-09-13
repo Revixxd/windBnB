@@ -2,7 +2,7 @@ import React from 'react'
 import SearchElementLocation from './SearchElementLocation'
 import { SearchStyled } from './searchStyling'
 import useWindowDimensions from '../windowSize'
-
+// import { ImCross } from 'react-icons/im'
 function Search(props) {
     const { width } = useWindowDimensions()
 
@@ -22,8 +22,6 @@ function Search(props) {
             return
         }
     }
-
-    //komentarz
     // make it seprate script or add it to widnowSize.js
     React.useEffect(() => {
         if (width <= 810) {
@@ -52,6 +50,7 @@ function Search(props) {
     return (
         <SearchStyled>
             <div className="container">
+                <div className="exitButtonDiv">{/* <ImCross /> */}</div>
                 <div
                     locaton
                     onClick={() => setSelected('location')}
