@@ -2,7 +2,7 @@ import React from 'react'
 import SearchElementLocation from './SearchElementLocation'
 import { SearchStyled } from './searchStyling'
 import useWindowDimensions from '../windowSize'
-// import { ImCross } from 'react-icons/im'
+import { ImCross } from 'react-icons/im'
 function Search(props) {
     const { width } = useWindowDimensions()
 
@@ -50,7 +50,12 @@ function Search(props) {
     return (
         <SearchStyled>
             <div className="container">
-                <div className="exitButtonDiv">{/* <ImCross /> */}</div>
+                <div
+                    className="exitButtonDiv"
+                    onClick={() => props.handleClick(false)}
+                >
+                    <ImCross size="20px" />
+                </div>
                 <div
                     locaton
                     onClick={() => setSelected('location')}
