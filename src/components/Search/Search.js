@@ -23,6 +23,7 @@ function Search(props) {
         }
     }
 
+    //komentarz
     // make it seprate script or add it to widnowSize.js
     React.useEffect(() => {
         if (width <= 810) {
