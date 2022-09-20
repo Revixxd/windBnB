@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const SearchStyled = styled.div`
-    p{
+    p {
         font-size: 14px;
     }
 
@@ -11,88 +11,86 @@ export const SearchStyled = styled.div`
     top: 0;
     left: 0;
     z-index: 10;
-    .material-symbols-outlined{
+    .material-symbols-outlined {
         font-size: 15px;
         font-weight: bold;
     }
-    .container{
+    form {
         grid-row-gap: 2vh;
         grid-column-gap: 5px;
         display: grid;
-        grid-template-columns: repeat( auto-fit,minmax(150px,1fr) );
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         max-width: 1300px;
         margin: 7vh auto;
         width: 90%;
     }
-    .element{
+    .element {
         cursor: pointer;
         padding: 10px 30px;
         border-radius: 16px;
-
     }
-    
-    .element--borderSelected{
+
+    .element--borderSelected {
         border: 1px black solid;
     }
 
-    .element--boxShadow{
+    .element--boxShadow {
         -webkit-box-shadow: 0px 0px 5px -1px rgba(177, 177, 181, 1);
         -moz-box-shadow: 0px 0px 5px -1px rgba(177, 177, 181, 1);
         box-shadow: 0px 0px 5px -1px rgba(177, 177, 181, 1);
     }
-    
-    .element--columnStart2{
+
+    .element--columnStart2 {
         grid-column-start: 2;
     }
 
-    .element--boxShadow--red{
+    .element--boxShadow--red {
         background-color: red;
     }
 
-    .element--button{
+    .element--button {
         display: flex;
-        align-items:center;
+        align-items: center;
         justify-content: center;
     }
-    .chooseDiv{
+    .chooseDiv {
         padding: 0px 20px;
         grid-row-start: 3;
         min-height: 180px;
     }
 
-    .element--button button{
+    .element--button button {
         cursor: pointer;
         display: flex;
-        align-items:center;
-        gap:5px;
-        background-color: #EB5757E5;
+        align-items: center;
+        gap: 5px;
+        background-color: #eb5757e5;
         border: none;
         color: #ffffff;
         padding: 5px 15px;
         border-radius: 8px;
     }
 
-    .elementsLocationDiv{
+    .elementsLocationDiv {
         display: flex;
         flex-direction: column;
-        gap:20px
+        gap: 20px;
     }
 
-    .chooseDiv--selectedOption{
+    .chooseDiv--selectedOption {
         height: 100%;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    .chooseDiv__selectedOption--element{
-        
+    .chooseDiv__selectedOption--element {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
-    
-    .chooseDiv__selectedOption--element button{
+
+    .chooseDiv__selectedOption--element button {
         padding: 3px;
         background-color: transparent;
         border: 1px solid #828282;
@@ -101,22 +99,19 @@ export const SearchStyled = styled.div`
         align-items: center;
     }
 
-    .chooseDiv__selectedOption__element--inputDiv{
+    .chooseDiv__selectedOption__element--inputDiv {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 15px
+        gap: 15px;
     }
 
-    @media (max-width: 810px){
-        .container{
-            grid-template-columns: 1fr ;
+    @media (max-width: 810px) {
+        form {
+            grid-template-columns: 1fr;
         }
-        .element--list{
+        .element--list {
             grid-row-start: 3;
         }
     }
-
-
-
 `

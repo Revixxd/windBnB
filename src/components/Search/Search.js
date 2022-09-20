@@ -23,7 +23,6 @@ function Search(props) {
         }
     }
 
-    //komentarz
     // make it seprate script or add it to widnowSize.js
     React.useEffect(() => {
         if (width <= 810) {
@@ -51,7 +50,7 @@ function Search(props) {
 
     return (
         <SearchStyled>
-            <div className="container">
+            <form>
                 <div
                     locaton
                     onClick={() => setSelected('location')}
@@ -144,7 +143,7 @@ function Search(props) {
                         </div>
                     )}
                 </div>
-            </div>
+            </form>
         </SearchStyled>
     )
 }
