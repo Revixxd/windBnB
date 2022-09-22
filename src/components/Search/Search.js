@@ -121,6 +121,7 @@ function Search(props) {
                                             setTempFormData((prevState) => {
                                                 return decreseNumberOfGuests(
                                                     prevState,
+                                                    prevState.adults,
                                                     'adults'
                                                 )
                                             })
@@ -134,7 +135,9 @@ function Search(props) {
                                         onClick={() =>
                                             setTempFormData((prevState) => {
                                                 return increaseNumberOfGuests(
-                                                    prevState
+                                                    prevState,
+                                                    prevState.adults,
+                                                    'adults'
                                                 )
                                             })
                                         }
@@ -155,6 +158,7 @@ function Search(props) {
                                             setTempFormData((prevState) => {
                                                 return decreseNumberOfGuests(
                                                     prevState,
+                                                    prevState.kids,
                                                     'kids'
                                                 )
                                             })
@@ -168,6 +172,7 @@ function Search(props) {
                                             setTempFormData((prevState) => {
                                                 return increaseNumberOfGuests(
                                                     prevState,
+                                                    prevState.kids,
                                                     'kids'
                                                 )
                                             })

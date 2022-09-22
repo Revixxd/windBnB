@@ -1,27 +1,27 @@
-export function decreseNumberOfGuests(prevState) {
+export function decreseNumberOfGuests(prevState, accesPoint, name) {
     let newValue
-    if (prevState.adults > 0) {
-        newValue = prevState.adults - 1
+    if (accesPoint > 0) {
+        newValue = accesPoint - 1
     } else {
-        newValue = prevState.adults
+        newValue = accesPoint
     }
     const returnObject = {
         ...prevState,
-        adults: newValue,
+        [name]: newValue,
     }
     return returnObject
 }
 
-export function increaseNumberOfGuests(prevState) {
+export function increaseNumberOfGuests(prevState, accesPoint, name) {
     let newValue
-    if (prevState.adults !== 10) {
-        newValue = prevState.adults + 1
+    if (accesPoint !== 10) {
+        newValue = accesPoint + 1
     } else {
-        newValue = prevState.adults
+        newValue = accesPoint
     }
     const returnObject = {
         ...prevState,
-        adults: newValue,
+        [name]: newValue,
     }
     return returnObject
 }
