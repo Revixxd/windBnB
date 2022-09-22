@@ -40,7 +40,8 @@ function App() {
     const deafultFromInfoState = {
         city: '',
         country: '',
-        numberOfGuests: '',
+        adults: 0,
+        kids: 0,
     }
     const [formInfo, setFormInfo] = React.useState(deafultFromInfoState)
 
