@@ -6,11 +6,10 @@ import useWindowDimensions from '../windowSize'
 import {
     increaseNumberOfGuests,
     decreseNumberOfGuests,
-} from './functions helper/numberOfGuests'
+} from './helper/numberOfGuests'
 import { Update } from '@material-ui/icons'
 
 function Search(props) {
-    // console.log(props.formInfo)
     const { width } = useWindowDimensions()
 
     const [isMobile, setIsMobile] = React.useState()
@@ -24,12 +23,18 @@ function Search(props) {
         }
     }, [width])
 
-    const elementsLocation = props.allCities.map((element) => {
+    const deafultFromInfoState = {
+        city: '',
+        adults: 1,
+        kids: 0,
+    }
+    const [tempFormData, setTempFormData] = React.useState(deafultFromInfoState)
+
+    const elementsLocation = props.allCities.map((city) => {
         return (
             <SearchElementLocation
-                handleClick={props.setCity}
-                content={element}
-                currentCountry={props.currentCountry}
+                setTempFormData={setTempFormData}
+                city={city}
             />
         )
     })
@@ -39,13 +44,6 @@ function Search(props) {
     function setSelected(parameter) {
         setSelectedOption(parameter)
     }
-
-    const deafultFromInfoState = {
-        city: '',
-        adults: 1,
-        kids: 0,
-    }
-    const [tempFormData, setTempFormData] = React.useState(deafultFromInfoState)
 
     React.useEffect(() => {
         console.log(tempFormData)
