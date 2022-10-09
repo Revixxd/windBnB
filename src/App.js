@@ -11,69 +11,44 @@ import Footer from './components/Footer/Footer'
 import data from './data/stays.json'
 
 function App() {
+    //search overlay
     const [searchTabVisible, setSearchTabVisible] = React.useState(false)
 
     function turnSearch() {
         setSearchTabVisible((prevState) => !prevState)
     }
 
-    const [numberOfGuests, setNumberOfGueasts] = React.useState(0)
-
-    //importing all cities name from data array
-    const allCities = [...new Set(data.map((item) => item.city))]
-
-    const currentCountry = 'Finland'
-
-    const [currentSelectedCity, setCurrentSelectedCity] =
-        React.useState('Turku')
-
-    //filtering data to show objects depend on currentSelectedCity value
-    const filter = data.filter(
-        (element) => element.city === currentSelectedCity
-    )
-
-    function setCity(city) {
-        setCurrentSelectedCity(city)
-        setSearchTabVisible(false)
-    }
-
     const deafultFromInfoState = {
-        city: '',
-        country: '',
+        city: 'Turku',
+        country: 'Finland',
         adults: 0,
         kids: 0,
     }
     const [formInfo, setFormInfo] = React.useState(deafultFromInfoState)
+    //importing all cities name from data array
+    const allCities = [...new Set(data.map((item) => item.city))]
+
+    //filtering data to show objects depend on currentSelectedCity value
+    let filtered = data.filter((element) => element.city === formInfo.city)
 
     return (
         <>
             <GlobalStyles />
             {searchTabVisible && (
                 <Search
-                    handleClick={turnSearch}
+                    turnSearch={turnSearch}
                     allCities={allCities}
                     setFormInfo={setFormInfo}
                     formInfo={formInfo}
-                    //bellow to delete
-                    currentSelectedCity={currentSelectedCity}
-                    setCity={setCity}
-                    currentCountry={currentCountry}
-                    numberOfGuests={numberOfGuests}
-                    setNumberOfGueasts={setNumberOfGueasts}
                 />
             )}
             {searchTabVisible && <div className="overlay"></div>}
             <ContainerStyled>
                 <Header
-                    currentSelectedCity={currentSelectedCity}
+                    currentSelectedCity={formInfo.city}
                     handleClick={turnSearch}
                 />
-                <Gallery
-                    currentCountry={currentCountry}
-                    currentSelectedCity={currentSelectedCity}
-                    data={filter}
-                    numberOfGuests={numberOfGuests}
-                />
+                <Gallery formInfo={formInfo} data={filtered} />
                 <Footer />
             </ContainerStyled>
         </>

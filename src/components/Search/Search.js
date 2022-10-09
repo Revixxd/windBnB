@@ -23,12 +23,7 @@ function Search(props) {
         }
     }, [width])
 
-    const deafultFromInfoState = {
-        city: '',
-        adults: 1,
-        kids: 0,
-    }
-    const [tempFormData, setTempFormData] = React.useState(deafultFromInfoState)
+    const [tempFormData, setTempFormData] = React.useState(props.formInfo)
 
     const elementsLocation = props.allCities.map((city, key) => {
         return (
@@ -46,15 +41,10 @@ function Search(props) {
         setSelectedOption(parameter)
     }
 
-    React.useEffect(() => {
-        console.log(tempFormData)
-    }, [tempFormData])
-
     function onSubmitForm(e) {
-        console.log('subbmit!!')
         e.preventDefault()
         props.setFormInfo(tempFormData)
-        setTempFormData(deafultFromInfoState)
+        props.turnSearch(false)
     }
 
     return (
