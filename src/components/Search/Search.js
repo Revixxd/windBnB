@@ -30,9 +30,10 @@ function Search(props) {
     }
     const [tempFormData, setTempFormData] = React.useState(deafultFromInfoState)
 
-    const elementsLocation = props.allCities.map((city) => {
+    const elementsLocation = props.allCities.map((city, key) => {
         return (
             <SearchElementLocation
+                key={key}
                 setTempFormData={setTempFormData}
                 city={city}
             />
