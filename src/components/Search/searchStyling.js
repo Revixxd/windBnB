@@ -22,20 +22,7 @@ export const SearchStyled = styled.div`
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         max-width: 1300px;
         margin: 7vh auto;
-
-        position: relative;
-
-        display: grid;
-        grid-row-gap: 2vh;
-        grid-column-gap: 5px;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-    .exitButtonDiv {
-        position: absolute;
-        left: 90vw;
-        top: -35px;
-
-        cursor: pointer;
+        width: 90%;
     }
     .element {
         cursor: pointer;

@@ -2,7 +2,13 @@ import React from 'react'
 import SearchElementLocation from './SearchElementLocation'
 import { SearchStyled } from './searchStyling'
 import useWindowDimensions from '../windowSize'
-import { ImCross } from 'react-icons/im'
+
+import {
+    increaseNumberOfGuests,
+    decreseNumberOfGuests,
+} from './helper/numberOfGuests'
+import { Update } from '@material-ui/icons'
+
 function Search(props) {
     const { width } = useWindowDimensions()
 
@@ -44,12 +50,6 @@ function Search(props) {
     return (
         <SearchStyled>
             <form onSubmit={(e) => onSubmitForm(e)}>
-                <div
-                    className="exitButtonDiv"
-                    onClick={() => props.handleClick(false)}
-                >
-                    <ImCross size="20px" />
-                </div>
                 <div
                     locaton
                     onClick={() => setSelected('location')}
