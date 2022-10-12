@@ -1,14 +1,20 @@
 import React from 'react'
 
+//styling
 import { GlobalStyles } from './components/globalStyles'
 import { ContainerStyled } from './components/containerStyling'
 
+//components
 import Header from './components/Header/Header'
 import Search from './components/Search/Search'
 import Gallery from './components/Gallery/Gallery'
 import Footer from './components/Footer/Footer'
 
+//data to show in gallery
 import data from './data/stays.json'
+
+//functions
+import filter from './helper/app/filter'
 
 function App() {
     //search overlay
