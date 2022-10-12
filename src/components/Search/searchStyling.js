@@ -15,8 +15,11 @@ export const SearchStyled = styled.div`
         font-size: 15px;
         font-weight: bold;
     }
-    .container {
-        width: 90%;
+    form {
+        grid-row-gap: 2vh;
+        grid-column-gap: 5px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         max-width: 1300px;
         margin: 7vh auto;
 
@@ -117,7 +120,7 @@ export const SearchStyled = styled.div`
     }
 
     @media (max-width: 810px) {
-        .container {
+        form {
             grid-template-columns: 1fr;
         }
         .element--list {

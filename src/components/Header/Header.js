@@ -1,18 +1,27 @@
-import { HeaderStyled } from "./headerStyling"
+import { HeaderStyled } from './headerStyling'
 
-import logo from "../../resources/img/logo.svg"
+import logo from '../../resources/img/logo.svg'
 
-function Header(props){
-    return(
+function Header(props) {
+    return (
         <HeaderStyled>
             <div className="logoDiv">
-                <img src={logo} alt="logo">
-                </img>
+                <img src={logo} alt="logo"></img>
             </div>
             <div className="navigation">
                 <h4>{props.currentSelectedCity}</h4>
-                <h4 onClick = {props.handleClick} className="navigation--addGuests">Add Guests</h4>
-                <span onClick = {props.handleClick} className="material-symbols-outlined">search</span>
+                <h4
+                    onClick={props.handleClick}
+                    className="navigation--addGuests"
+                >
+                    Add Guests
+                </h4>
+                <span
+                    onClick={props.handleClick}
+                    className="material-symbols-outlined"
+                >
+                    search
+                </span>
             </div>
         </HeaderStyled>
     )

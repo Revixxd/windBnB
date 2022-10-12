@@ -1,67 +1,64 @@
-import React from "react"
+import React from 'react'
 
+//styling
+import { GlobalStyles } from './components/globalStyles'
+import { ContainerStyled } from './components/containerStyling'
 
-import {GlobalStyles} from "./components/globalStyles"
-import { ContainerStyled } from "./components/containerStyling"
+//components
+import Header from './components/Header/Header'
+import Search from './components/Search/Search'
+import Gallery from './components/Gallery/Gallery'
+import Footer from './components/Footer/Footer'
 
-import Header from "./components/Header/Header"
-import Search from "./components/Search/Search"
-import Gallery from "./components/Gallery/Gallery"
-import Footer from "./components/Footer/Footer"
+//data to show in gallery
+import data from './data/stays.json'
 
-import data from "./data/stays.json"
+//functions
+import filter from './helper/app/filter'
 
 function App() {
+    //search overlay
+    const [searchTabVisible, setSearchTabVisible] = React.useState(false)
 
-  const [searchTabVisible, setSearchTabVisible] = React.useState(false)
+    function turnSearch() {
+        setSearchTabVisible((prevState) => !prevState)
+    }
 
-  function turnSearch(){
-    setSearchTabVisible(prevState => !prevState)
-  }
+    const deafultFromInfoState = {
+        city: 'Turku',
+        country: 'Finland',
+        adults: 0,
+        kids: 0,
+    }
+    const [formInfo, setFormInfo] = React.useState(deafultFromInfoState)
+    //importing all cities name from data array
+    const allCities = [...new Set(data.map((item) => item.city))]
 
-  const [numberOfGuests, setNumberOfGueasts] = React.useState(0)
+    //filtering data to show objects depend on currentSelectedCity value
+    let filtered = filter(data, formInfo)
 
-  //importing all cities name from data array
-  const allCities = [...new Set(data.map(item => item.city))];
-
-  const currentCountry = "Finland"  
-
-  const [currentSelectedCity, setCurrentSelectedCity] = React.useState("Turku") 
-  
-  //filtering data to show objects depend on currentSelectedCity value
-  const filter = data.filter(element  => element.city === currentSelectedCity )
-
-  function setCity (city){
-    setCurrentSelectedCity(city)
-    setSearchTabVisible(false)
-  }
-  
-
-  return (
-    <>
-      <GlobalStyles />
-        {searchTabVisible && <Search 
-        handleClick={turnSearch} 
-        allCities = {allCities} 
-        currentSelectedCity = {currentSelectedCity}
-        setCity ={setCity}
-        currentCountry = {currentCountry}
-        numberOfGuests = {numberOfGuests}
-        setNumberOfGueasts = {setNumberOfGueasts}
-        />
-        }
-        {searchTabVisible && <div className="overlay"></div>}
-        <ContainerStyled>
-          <Header  currentSelectedCity = {currentSelectedCity} handleClick={turnSearch} />
-          <Gallery  currentCountry = {currentCountry} 
-          currentSelectedCity = {currentSelectedCity} 
-          data={filter} 
-          numberOfGuests = {numberOfGuests}
-          />
-          <Footer />
-        </ContainerStyled>
-    </>
-  );
+    return (
+        <>
+            <GlobalStyles />
+            {searchTabVisible && (
+                <Search
+                    turnSearch={turnSearch}
+                    allCities={allCities}
+                    setFormInfo={setFormInfo}
+                    formInfo={formInfo}
+                />
+            )}
+            {searchTabVisible && <div className="overlay"></div>}
+            <ContainerStyled>
+                <Header
+                    currentSelectedCity={formInfo.city}
+                    handleClick={turnSearch}
+                />
+                <Gallery formInfo={formInfo} data={filtered} />
+                <Footer />
+            </ContainerStyled>
+        </>
+    )
 }
 
-export default App;
+export default App

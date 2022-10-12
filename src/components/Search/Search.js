@@ -8,20 +8,6 @@ function Search(props) {
 
     const [isMobile, setIsMobile] = React.useState()
 
-    function increaseNumberOfGuests() {
-        if (props.numberOfGuests !== 10) {
-            props.setNumberOfGueasts((prev) => prev + 1)
-        } else {
-            return
-        }
-    }
-    function decreseNumberOfGuests() {
-        if (props.numberOfGuests > 0) {
-            props.setNumberOfGueasts((prev) => prev - 1)
-        } else {
-            return
-        }
-    }
     // make it seprate script or add it to widnowSize.js
     React.useEffect(() => {
         if (width <= 810) {
@@ -31,12 +17,14 @@ function Search(props) {
         }
     }, [width])
 
-    const elementsLocation = props.allCities.map((element) => {
+    const [tempFormData, setTempFormData] = React.useState(props.formInfo)
+
+    const elementsLocation = props.allCities.map((city, key) => {
         return (
             <SearchElementLocation
-                handleClick={props.setCity}
-                content={element}
-                currentCountry={props.currentCountry}
+                key={key}
+                setTempFormData={setTempFormData}
+                city={city}
             />
         )
     })
@@ -47,9 +35,15 @@ function Search(props) {
         setSelectedOption(parameter)
     }
 
+    function onSubmitForm(e) {
+        e.preventDefault()
+        props.setFormInfo(tempFormData)
+        props.turnSearch(false)
+    }
+
     return (
         <SearchStyled>
-            <div className="container">
+            <form onSubmit={(e) => onSubmitForm(e)}>
                 <div
                     className="exitButtonDiv"
                     onClick={() => props.handleClick(false)}
@@ -84,10 +78,7 @@ function Search(props) {
                         isMobile ? '' : 'element--boxShadow'
                     }`}
                 >
-                    <button onClick={props.handleClick}>
-                        <span class="material-symbols-outlined">search</span>
-                        Search
-                    </button>
+                    <input type="submit" value="Submit" />
                 </div>
 
                 <div
@@ -112,17 +103,34 @@ function Search(props) {
                                 </div>
 
                                 <div className="chooseDiv__selectedOption__element--inputDiv">
-                                    <button onClick={decreseNumberOfGuests}>
-                                        <span class="material-symbols-outlined">
-                                            remove
-                                        </span>
-                                    </button>
-                                    <p>{props.numberOfGuests}</p>
-                                    <button onClick={increaseNumberOfGuests}>
-                                        <span class="material-symbols-outlined">
-                                            add
-                                        </span>
-                                    </button>
+                                    <input
+                                        type="button"
+                                        value="-"
+                                        onClick={() =>
+                                            setTempFormData((prevState) => {
+                                                return decreseNumberOfGuests(
+                                                    prevState,
+                                                    prevState.adults,
+                                                    'adults'
+                                                )
+                                            })
+                                        }
+                                    />
+
+                                    <p>{tempFormData.adults}</p>
+                                    <input
+                                        type="button"
+                                        value="+"
+                                        onClick={() =>
+                                            setTempFormData((prevState) => {
+                                                return increaseNumberOfGuests(
+                                                    prevState,
+                                                    prevState.adults,
+                                                    'adults'
+                                                )
+                                            })
+                                        }
+                                    />
                                 </div>
                             </div>
                             <div className="chooseDiv__selectedOption--element">
@@ -132,23 +140,39 @@ function Search(props) {
                                 </div>
 
                                 <div className="chooseDiv__selectedOption__element--inputDiv">
-                                    <button onClick={decreseNumberOfGuests}>
-                                        <span class="material-symbols-outlined">
-                                            remove
-                                        </span>
-                                    </button>
-                                    <p>{props.numberOfGuests}</p>
-                                    <button onClick={increaseNumberOfGuests}>
-                                        <span class="material-symbols-outlined">
-                                            add
-                                        </span>
-                                    </button>
+                                    <input
+                                        type="button"
+                                        value="-"
+                                        onClick={() =>
+                                            setTempFormData((prevState) => {
+                                                return decreseNumberOfGuests(
+                                                    prevState,
+                                                    prevState.kids,
+                                                    'kids'
+                                                )
+                                            })
+                                        }
+                                    />
+                                    <p>{tempFormData.kids}</p>
+                                    <input
+                                        type="button"
+                                        value="+"
+                                        onClick={() =>
+                                            setTempFormData((prevState) => {
+                                                return increaseNumberOfGuests(
+                                                    prevState,
+                                                    prevState.kids,
+                                                    'kids'
+                                                )
+                                            })
+                                        }
+                                    />
                                 </div>
                             </div>
                         </div>
                     )}
                 </div>
-            </div>
+            </form>
         </SearchStyled>
     )
 }
