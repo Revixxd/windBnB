@@ -35,7 +35,7 @@ function App() {
     const allCities = [...new Set(data.map((item) => item.city))]
 
     //filtering data to show objects depend on currentSelectedCity value
-    let filtered = data.filter((element) => element.city === formInfo.city)
+    let filtered = filter(data, formInfo)
 
     return (
         <>
