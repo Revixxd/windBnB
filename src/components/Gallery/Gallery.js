@@ -3,8 +3,12 @@ import { GalleryStyled } from './galleryStyling'
 import GalleryElement from './GalleryElement'
 
 export default function Gallery(props) {
-    const galleryElements = props.data.map((element) => {
-        return <GalleryElement {...element} />
+    const fillteredData = props.data.filter(
+        (item) => item.maxGuests > props.numberOfGuests
+    )
+
+    const galleryElements = fillteredData.map((element, key) => {
+        return <GalleryElement key={key} {...element} />
     })
 
     return (
