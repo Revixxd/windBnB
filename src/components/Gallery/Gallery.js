@@ -13,7 +13,7 @@ export default function Gallery(props) {
 
     return (
         <GalleryStyled>
-            <h1>Stays in {props.currentCountry}</h1>
+            <h1>Stays in {props.formInfo.city}</h1>
             <div className="Gallerystyled--container">{galleryElements}</div>
         </GalleryStyled>
     )
