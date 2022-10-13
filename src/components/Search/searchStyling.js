@@ -33,10 +33,13 @@ export const SearchStyled = styled.div`
     svg {
         cursor: pointer;
     }
+
+    // on selected
     .element {
         cursor: pointer;
         padding: 10px 30px;
         border-radius: 16px;
+        border: 1px solid white;
     }
 
     .element--borderSelected {
@@ -49,6 +52,7 @@ export const SearchStyled = styled.div`
         box-shadow: 0px 0px 5px -1px rgba(177, 177, 181, 1);
     }
 
+    //for grid
     .element--columnStart2 {
         grid-column-start: 2;
     }
