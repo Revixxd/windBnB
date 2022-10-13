@@ -36,7 +36,6 @@ function App() {
 
     //filtering data to show objects depend on currentSelectedCity value
     let filtered = filter(data, formInfo)
-
     return (
         <>
             <GlobalStyles />
