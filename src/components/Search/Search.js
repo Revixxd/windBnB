@@ -3,6 +3,8 @@ import React from 'react'
 //styling
 import { SearchStyled } from './searchStyling'
 
+//icons
+import { ImCross } from 'react-icons/im'
 //scripts
 import useWindowDimensions from '../windowSize'
 import SearchElementLocation from './SearchElementLocation'
@@ -53,6 +55,7 @@ function Search(props) {
 
     return (
         <SearchStyled>
+            <ImCross onClick={props.turnSearch} />
             <form onSubmit={(e) => onSubmitForm(e)}>
                 <div
                     locaton
