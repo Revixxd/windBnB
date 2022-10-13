@@ -1,13 +1,15 @@
 import React from 'react'
-import SearchElementLocation from './SearchElementLocation'
-import { SearchStyled } from './searchStyling'
-import useWindowDimensions from '../windowSize'
 
+//styling
+import { SearchStyled } from './searchStyling'
+
+//scripts
+import useWindowDimensions from '../windowSize'
+import SearchElementLocation from './SearchElementLocation'
 import {
     increaseNumberOfGuests,
     decreseNumberOfGuests,
 } from './helper/numberOfGuests'
-import { Update } from '@material-ui/icons'
 
 //
 
