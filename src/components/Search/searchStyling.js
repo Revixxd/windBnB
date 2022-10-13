@@ -4,13 +4,22 @@ export const SearchStyled = styled.div`
     p {
         font-size: 14px;
     }
-
     background-color: #ffffff;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 10;
+
+    .container {
+        position: relative;
+        padding: 2%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .material-symbols-outlined {
         font-size: 15px;
         font-weight: bold;
@@ -20,9 +29,9 @@ export const SearchStyled = styled.div`
         grid-column-gap: 5px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        max-width: 1300px;
-        margin: 7vh auto;
-        width: 90%;
+    }
+    svg {
+        cursor: pointer;
     }
     .element {
         cursor: pointer;
