@@ -19,7 +19,7 @@ export default function SearchElementLocation(props) {
                     })
                 }
             >
-                {props.city}, Finland
+                {props.city}
             </h4>
         </SearchElementLocationStyling>
     )

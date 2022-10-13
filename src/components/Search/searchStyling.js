@@ -20,8 +20,9 @@ export const SearchStyled = styled.div`
         gap: 20px;
     }
 
+    //style for icons next to location options
     .material-symbols-outlined {
-        font-size: 15px;
+        font-size: 25px;
         font-weight: bold;
     }
     form {

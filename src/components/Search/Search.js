@@ -68,7 +68,7 @@ function Search(props) {
                         }`}
                     >
                         <h3>Location</h3>
-                        <p>{props.currentSelectedCity}</p>
+                        <p>{props.formInfo.country}</p>
                     </div>
                     <div
                         onClick={() => setSelected('guests')}
