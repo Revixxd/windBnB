@@ -26,10 +26,21 @@ export const SearchStyled = styled.div`
         font-weight: bold;
     }
     form {
+        button {
+            cursor: pointer;
+        }
         grid-row-gap: 2vh;
         grid-column-gap: 5px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+        input[type='submit'] {
+            border: none;
+            background-color: transparent;
+        }
+        input[type='submit'] a {
+            color: blue;
+        }
     }
     svg {
         cursor: pointer;
@@ -41,6 +52,9 @@ export const SearchStyled = styled.div`
         padding: 10px 30px;
         border-radius: 16px;
         border: 1px solid white;
+        input {
+            cursor: pointer;
+        }
     }
 
     .element--borderSelected {
@@ -58,31 +72,25 @@ export const SearchStyled = styled.div`
         grid-column-start: 2;
     }
 
-    .element--boxShadow--red {
-        background-color: red;
-    }
-
     .element--button {
+        padding: 0px;
+        background-color: #f21a1acf;
         display: flex;
         align-items: center;
         justify-content: center;
     }
+    .element--button input {
+        width: 100%;
+        padding: 10px 30px;
+
+        font-size: 1.3rem;
+        color: #333333;
+    }
+
     .chooseDiv {
         padding: 0px 20px;
         grid-row-start: 3;
         min-height: 180px;
-    }
-
-    .element--button button {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        background-color: #eb5757e5;
-        border: none;
-        color: #ffffff;
-        padding: 5px 15px;
-        border-radius: 8px;
     }
 
     .elementsLocationDiv {
