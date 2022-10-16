@@ -61,6 +61,7 @@ export const SearchStyled = styled.div`
         border: 1px black solid;
     }
 
+    //shadow for elements
     .element--boxShadow {
         -webkit-box-shadow: 0px 0px 5px -1px rgba(177, 177, 181, 1);
         -moz-box-shadow: 0px 0px 5px -1px rgba(177, 177, 181, 1);
@@ -87,16 +88,27 @@ export const SearchStyled = styled.div`
         color: #333333;
     }
 
+    .elementsLocationDiv {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    //
     .chooseDiv {
         padding: 0px 20px;
         grid-row-start: 3;
         min-height: 180px;
     }
 
-    .elementsLocationDiv {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    .chooseDiv input[type='button'] {
+        padding: 3px 5px;
+        background-color: transparent;
+
+        font-size: 1rem;
+
+        border: 1px solid #828282;
+        border-radius: 4px;
     }
 
     .chooseDiv--selectedOption {
@@ -112,22 +124,23 @@ export const SearchStyled = styled.div`
         gap: 10px;
     }
 
-    .chooseDiv__selectedOption--element button {
-        padding: 3px;
-        background-color: transparent;
-        border: 1px solid #828282;
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-    }
-
     .chooseDiv__selectedOption__element--inputDiv {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 15px;
+        p {
+            font-size: 1rem;
+            width: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        input {
+            cursor: pointer;
+        }
     }
 
+    //media instead of max width depend on const
     @media (max-width: 810px) {
         form {
             grid-template-columns: 1fr;
