@@ -34,8 +34,9 @@ function Search(props) {
     const elementsLocation = props.allCities.map((city, key) => {
         return (
             <SearchElementLocation
-                key={key}
+                selectedCity={tempFormData.city}
                 setTempFormData={setTempFormData}
+                key={key}
                 city={city}
             />
         )
@@ -55,131 +56,128 @@ function Search(props) {
 
     return (
         <SearchStyled>
-            <ImCross onClick={props.turnSearch} />
-            <form onSubmit={(e) => onSubmitForm(e)}>
-                <div
-                    locaton
-                    onClick={() => setSelected('location')}
-                    className={`element element--boxShadow  ${
-                        selectedOption === 'location'
-                            ? 'element--borderSelected'
-                            : ''
-                    }`}
-                >
-                    <h3>Location</h3>
-                    <p>{props.currentSelectedCity}</p>
-                </div>
-                <div
-                    onClick={() => setSelected('guests')}
-                    className={`element element--boxShadow ${
-                        selectedOption === 'guests'
-                            ? 'element--borderSelected'
-                            : ''
-                    }`}
-                >
-                    <h3>Guests</h3>
-                    <p>Add Guests</p>
-                </div>
-                <div
-                    className={`element element--button ${
-                        isMobile ? '' : 'element--boxShadow'
-                    }`}
-                >
-                    <input type="submit" value="Submit" />
-                </div>
-
-                <div
-                    className={`chooseDiv ${
-                        selectedOption === 'guests'
-                            ? `${isMobile ? '' : 'element--columnStart2'}`
-                            : ''
-                    }`}
-                >
-                    {selectedOption === 'location' && (
-                        <div className="elementsLocationDiv">
-                            {elementsLocation}
-                        </div>
-                    )}
-
-                    {selectedOption === 'guests' && (
-                        <div className="chooseDiv--selectedOption">
-                            <div className="chooseDiv__selectedOption--element">
-                                <div className="chooseDiv__selectedOption__element--textDiv">
-                                    <h4>Adults</h4>
-                                    <p>Ages 13 or above</p>
+            <div className="container">
+                <ImCross onClick={props.turnSearch} />
+                <form onSubmit={(e) => onSubmitForm(e)}>
+                    <div
+                        locaton
+                        onClick={() => setSelected('location')}
+                        className={`element element--boxShadow  ${
+                            selectedOption === 'location'
+                                ? 'element--borderSelected'
+                                : ''
+                        }`}
+                    >
+                        <h3>Location</h3>
+                        <p>{props.formInfo.country}</p>
+                    </div>
+                    <div
+                        onClick={() => setSelected('guests')}
+                        className={`element element--boxShadow ${
+                            selectedOption === 'guests'
+                                ? 'element--borderSelected'
+                                : ''
+                        }`}
+                    >
+                        <h3>Guests</h3>
+                        <p>Add Guests</p>
+                    </div>
+                    <div
+                        className={`element element--button ${
+                            isMobile ? '' : 'element--boxShadow'
+                        }`}
+                    >
+                        <input type="submit" value="Submit" />
+                    </div>
+                    <div
+                        className={`chooseDiv ${
+                            selectedOption === 'guests'
+                                ? `${isMobile ? '' : 'element--columnStart2'}`
+                                : ''
+                        }`}
+                    >
+                        {selectedOption === 'location' && (
+                            <div className="elementsLocationDiv">
+                                {elementsLocation}
+                            </div>
+                        )}
+                        {selectedOption === 'guests' && (
+                            <div className="chooseDiv--selectedOption">
+                                <div className="chooseDiv__selectedOption--element">
+                                    <div className="chooseDiv__selectedOption__element--textDiv">
+                                        <h4>Adults</h4>
+                                        <p>Ages 13 or above</p>
+                                    </div>
+                                    <div className="chooseDiv__selectedOption__element--inputDiv">
+                                        <input
+                                            type="button"
+                                            value="-"
+                                            onClick={() =>
+                                                setTempFormData((prevState) => {
+                                                    return decreseNumberOfGuests(
+                                                        prevState,
+                                                        prevState.adults,
+                                                        'adults'
+                                                    )
+                                                })
+                                            }
+                                        />
+                                        <p>{tempFormData.adults}</p>
+                                        <input
+                                            type="button"
+                                            value="+"
+                                            onClick={() =>
+                                                setTempFormData((prevState) => {
+                                                    return increaseNumberOfGuests(
+                                                        prevState,
+                                                        prevState.adults,
+                                                        'adults'
+                                                    )
+                                                })
+                                            }
+                                        />
+                                    </div>
                                 </div>
-
-                                <div className="chooseDiv__selectedOption__element--inputDiv">
-                                    <input
-                                        type="button"
-                                        value="-"
-                                        onClick={() =>
-                                            setTempFormData((prevState) => {
-                                                return decreseNumberOfGuests(
-                                                    prevState,
-                                                    prevState.adults,
-                                                    'adults'
-                                                )
-                                            })
-                                        }
-                                    />
-
-                                    <p>{tempFormData.adults}</p>
-                                    <input
-                                        type="button"
-                                        value="+"
-                                        onClick={() =>
-                                            setTempFormData((prevState) => {
-                                                return increaseNumberOfGuests(
-                                                    prevState,
-                                                    prevState.adults,
-                                                    'adults'
-                                                )
-                                            })
-                                        }
-                                    />
+                                <div className="chooseDiv__selectedOption--element">
+                                    <div className="chooseDiv__selectedOption__element--textDiv">
+                                        <h4>Children</h4>
+                                        <p>Ages 2-12</p>
+                                    </div>
+                                    <div className="chooseDiv__selectedOption__element--inputDiv">
+                                        <input
+                                            type="button"
+                                            value="-"
+                                            onClick={() =>
+                                                setTempFormData((prevState) => {
+                                                    return decreseNumberOfGuests(
+                                                        prevState,
+                                                        prevState.kids,
+                                                        'kids'
+                                                    )
+                                                })
+                                            }
+                                        />
+                                        <p>{tempFormData.kids}</p>
+                                        <input
+                                            type="button"
+                                            value="+"
+                                            onClick={() =>
+                                                setTempFormData((prevState) => {
+                                                    return increaseNumberOfGuests(
+                                                        prevState,
+                                                        prevState.kids,
+                                                        'kids'
+                                                    )
+                                                })
+                                            }
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                            <div className="chooseDiv__selectedOption--element">
-                                <div className="chooseDiv__selectedOption__element--textDiv">
-                                    <h4>Children</h4>
-                                    <p>Ages 2-12</p>
-                                </div>
-
-                                <div className="chooseDiv__selectedOption__element--inputDiv">
-                                    <input
-                                        type="button"
-                                        value="-"
-                                        onClick={() =>
-                                            setTempFormData((prevState) => {
-                                                return decreseNumberOfGuests(
-                                                    prevState,
-                                                    prevState.kids,
-                                                    'kids'
-                                                )
-                                            })
-                                        }
-                                    />
-                                    <p>{tempFormData.kids}</p>
-                                    <input
-                                        type="button"
-                                        value="+"
-                                        onClick={() =>
-                                            setTempFormData((prevState) => {
-                                                return increaseNumberOfGuests(
-                                                    prevState,
-                                                    prevState.kids,
-                                                    'kids'
-                                                )
-                                            })
-                                        }
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                </div>
-            </form>
+                        )}
+                    </div>
+                </form>
+            </div>
         </SearchStyled>
     )
 }
