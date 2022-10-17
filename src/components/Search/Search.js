@@ -34,8 +34,9 @@ function Search(props) {
     const elementsLocation = props.allCities.map((city, key) => {
         return (
             <SearchElementLocation
-                key={key}
+                selectedCity={tempFormData.city}
                 setTempFormData={setTempFormData}
+                key={key}
                 city={city}
             />
         )

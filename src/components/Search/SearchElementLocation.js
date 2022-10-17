@@ -13,6 +13,11 @@ export default function SearchElementLocation(props) {
         <SearchElementLocationStyling>
             <span class="material-symbols-outlined">where_to_vote</span>
             <h4
+                className={` ${
+                    props.selectedCity === props.city
+                        ? `${'currentCity'}`
+                        : `${'listOfCities'}`
+                }`}
                 onClick={() =>
                     props.setTempFormData((prevState) => {
                         return setCityToForm(prevState, props.city)

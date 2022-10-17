@@ -93,7 +93,12 @@ export const SearchStyled = styled.div`
         flex-direction: column;
         gap: 20px;
     }
-
+    .listOfCities {
+        font-weight: 100;
+    }
+    .currentCity {
+        font-weight: 600;
+    }
     //
     .chooseDiv {
         padding: 0px 20px;
