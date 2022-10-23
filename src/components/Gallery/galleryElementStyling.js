@@ -1,29 +1,29 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const GalleryElementStyled = styled.div`
-    p{
+    p {
         font-weight: 500;
         font-size: 14px;
     }
     max-width: 100%;
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
 
-    .imgDiv img{
+    .imgDiv img {
         border-radius: 24px;
         width: 100%;
-        height:250px;
+        height: 250px;
         object-fit: cover;
     }
-    .infoDiv{
+    .infoDiv {
         padding: 5px;
         display: flex;
         flex-direction: column;
-        gap:15px
+        gap: 15px;
     }
 
-    .infoDivUp{
+    .infoDivUp {
         height: 15px;
         display: flex;
         flex-direction: row;
@@ -31,28 +31,27 @@ export const GalleryElementStyled = styled.div`
         justify-content: space-between;
     }
 
-    .infoDivUp--hostApartmentDiv{
+    .infoDivUp--hostApartmentDiv {
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap:10px
+        gap: 10px;
     }
-    .infoDivUp--hostApartmentDiv h5{
+    .infoDivUp--hostApartmentDiv h5 {
         padding: 5px 8px;
         border-radius: 12px;
-        border: solid 1px #4F4F4F;
+        border: solid 1px #4f4f4f;
     }
-    .infoDivUp--raitingDiv{
+    .infoDivUp--raitingDiv {
         display: flex;
         align-items: center;
     }
-    .infoDivUp--raitingDiv p{
-        color: #4F4F4F;
+    .infoDivUp--raitingDiv p {
+        color: #4f4f4f;
     }
 
-    .material-symbols-outlined{
-        font-size:20px;
-        color: #EB5757;
+    .material-symbols-outlined {
+        padding-bottom: 5px;
+        color: #eb5757;
     }
-
 `

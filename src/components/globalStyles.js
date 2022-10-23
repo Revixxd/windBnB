@@ -28,7 +28,7 @@ export const GlobalStyles = createGlobalStyle`
         font-weight:700;
     }
 
-    h1, .navigation > h4, p, .infoDivUp--hostApartmentDiv, footer, element {
+    h1, .navigation > h4, p, .infoDivUp--hostApartmentDiv, footer, element, span {
         user-select: none;
     }
 
