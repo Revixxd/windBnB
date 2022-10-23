@@ -41,7 +41,6 @@ function App() {
 
     console.log(filtered)
 
-    const [isData, setIsData] = React.useState(false)
     return (
         <>
             <GlobalStyles />
