@@ -6,9 +6,11 @@ import { ContainerStyled } from './components/containerStyling'
 
 //components
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+
 import Search from './components/Search/Search'
 import Gallery from './components/Gallery/Gallery'
-import Footer from './components/Footer/Footer'
+import NoData from './components/NoData/NoData'
 
 //data to show in gallery
 import data from './data/stays.json'
@@ -36,6 +38,10 @@ function App() {
 
     //filtering data to show objects depend on currentSelectedCity value
     let filtered = filter(data, formInfo)
+
+    console.log(filtered)
+
+    const [isData, setIsData] = React.useState(false)
     return (
         <>
             <GlobalStyles />
@@ -53,7 +59,11 @@ function App() {
                     currentSelectedCity={formInfo.city}
                     handleClick={turnSearch}
                 />
-                <Gallery formInfo={formInfo} data={filtered} />
+                {filtered.length === 0 ? (
+                    <NoData />
+                ) : (
+                    <Gallery formInfo={formInfo} data={filtered} />
+                )}
                 <Footer />
             </ContainerStyled>
         </>
