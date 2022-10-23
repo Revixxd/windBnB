@@ -30,6 +30,7 @@ export const GlobalStyles = createGlobalStyle`
 
     h1, .navigation > h4, p, .infoDivUp--hostApartmentDiv, footer, element, span {
         user-select: none;
+        cursor: default;
     }
 
     .overlay{
