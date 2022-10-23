@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const ContainerStyled = styled.div`
     max-width: 1300px;
     width: 90%;
@@ -21,6 +20,4 @@ export const ContainerStyled = styled.div`
     -ms-flex-pack: space-around;
     justify-content: space-between;
     margin-top: 30px;
-
-    
 `
