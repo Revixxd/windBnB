@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -28,6 +28,9 @@ export const GlobalStyles = createGlobalStyle`
         font-weight:700;
     }
 
+    h1, .navigation > h4, p, .infoDivUp--hostApartmentDiv, footer, element {
+        user-select: none;
+    }
 
     .overlay{
         position:fixed;

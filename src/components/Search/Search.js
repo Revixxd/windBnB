@@ -6,7 +6,7 @@ import { SearchStyled } from './searchStyling'
 //icons
 import { ImCross } from 'react-icons/im'
 //scripts
-import useWindowDimensions from '../windowSize'
+import useWindowDimensions from './helper/windowSize'
 import SearchElementLocation from './SearchElementLocation'
 import {
     increaseNumberOfGuests,
